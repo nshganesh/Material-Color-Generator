@@ -4,7 +4,7 @@ module Material
   module Color
     def self.generate(color_code="")
       decimal_code = nil
-      decimal_code = color_code[1..-1].to_i(16).to_s(10).to_i unless color_code.blank?
+      decimal_code = color_code[1..-1].to_i(16).to_s(10).to_i unless color_code.empty?
 
       if decimal_code.blank?
         generated_code = color_codes.to_a.sample(1).to_h
