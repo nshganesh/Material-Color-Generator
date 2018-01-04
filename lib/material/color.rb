@@ -6,13 +6,13 @@ module Material
       decimal_code = nil
       decimal_code = color_code[1..-1].to_i(16).to_s(10).to_i unless color_code.empty?
 
-      if decimal_code.blank?
-        generated_code = color_codes.to_a.sample(1).to_h
-      else
+      if decimal_code
         closest = decimal_values.sort.group_by{|e| e <=> decimal_code}
         closest_decimal = closest[-1].last || closest[1].first
 
         generated_code = color_codes.select{|key, value| value == closest_decimal }
+      else
+        generated_code = color_codes.to_a.sample(1).to_h
       end
 
       '#'+generated_code.keys.first.to_s
