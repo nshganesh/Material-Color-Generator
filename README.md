@@ -22,6 +22,10 @@ Or install it yourself as:
 
 Install the gem.
 
+`rails c`.
+`Material::Color.generate` => random material hex color will be generated.
+`Material::Color.generate("#123456")` => material hex color near to the specified hex color will be generated. 
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
